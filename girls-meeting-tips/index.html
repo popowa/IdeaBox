@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>女子会運営サミット第０回目</title>
+    <!--[if IE]><script type="text/javascript" src="./excanvas.js"></script><![endif]-->
+    <script type="text/javascript">
+		onload = function() {
+			draw();
+		};
+		function draw() {
+		var canvasX = document.getElementById('periodtime');
+		if (! canvasX || ! canvasX.getContext) {
+		return false;
+		}
+		var ctx4X = canvasX.getContext('2d');		
+		ctx4X.beginPath();
+		ctx4X.moveTo(100, 50);
+		ctx4X.lineTo(100, 420);
+		ctx4X.moveTo(780, 420);
+		ctx4X.lineTo(100, 420);
+		ctx4X.closePath();
+		ctx4X.stroke();
+
+		ctx4X.font = "12pt Osaka";
+		ctx4X.fillText("事前", 130, 440); 
+		ctx4X.fillText("開催中", 400, 440); 
+		ctx4X.fillText("事後", 700, 440); 
+		ctx4X.fillText("課題点", 30, 380);
+		ctx4X.fillText("良かった点", 0,100);
+		ctx4X.font = "9pt Osaka";
+		
+		//事前
+	    ctx4X.fillText('女子が一杯くる、という安心感', 110, 100);
+	    ctx4X.fillText('トレンドでトピックを決める', 110, 120);
+	    ctx4X.fillText('Twitterでの告知', 140, 170);
+
+
+	    ctx4X.fillText('キャンセル人数が読めない', 110, 300);
+	    ctx4X.fillText('(無料でしたいので)お金管理が大変', 110, 350);
+	    ctx4X.fillText('スポンサー', 110, 365);
+	    ctx4X.fillText('会計が必要？', 110, 400);
+
+		//開催中
+	    ctx4X.fillText('スピーカーは女性の方がいい', 320, 170);
+
+	    ctx4X.fillText('働く女性のセッションがあるとよい', 250, 50);
+	    ctx4X.fillText('[勉強会]-[女性向け]-[交流会]', 270, 70);
+	    ctx4X.fillText('エスコート制で男性許可もいいらしい', 290, 90);
+	    ctx4X.fillText('休憩は眺めに（15分）', 310, 120);
+	    ctx4X.fillText('レストランでいきなりやる', 270, 135);
+	    ctx4X.fillText('子供の世話はどうするか？', 300, 400);
+	    ctx4X.fillText('Twitter/Blogでの反応がない', 350, 350);
+	    ctx4X.fillText('2〜3割のキャンセル率', 350, 370);
+	    ctx4X.fillText('紙のアンケートは回収率が高い(お土産と引き換えはさらにUP)', 350, 250);
+	    ctx4X.fillText('女性はお祭りな勉強会、というより勉強している感じが強い', 350, 220);
+
+
+		//事後
+	    ctx4X.fillText('USTはいいが、見てくれている人が男性が多い？？', 500, 330);
+	    ctx4X.fillText('運営メンバーで反省会', 450, 140);
+	    ctx4X.fillText('告知はFB/メンバーでのやり取りはFBグループ', 420, 200);
+	    ctx4X.fillText('出来ない事は出来ないと言う', 550, 120);
+
+		}
+    
+ </script>   
+  </head>
+  <body>
+    <h1>女子会運営サミット - チャート</h1>
+    <h3>勉強会等で参加者の半分ぐらい女性になり、女子会（枠）の必要性がなくなる事がゴール</h3>
+    <canvas id="periodtime" width="800" height="520"></canvas>
+  </body>
+</html>
