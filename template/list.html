@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html lang="ja"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen,tv" /> 
+<link rev="made" href="mailto:ayakomuro@gmail.com"> 
+<link href="./js/jquery.bubblepopup.v2.3.1.css" rel="stylesheet" type="text/css" />
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/jquery.bubblepopup.v2.3.1.min.js" type="text/javascript"></script>
+<title>アイコンからあの人を捜す - アイ友</title> 
+</head> 
+<body><br />
+<div class="main_content">
+	<div id="print_hide">
+		<div class="backtohome"><a href="/">Codeに戻る</a></div>
+
+	    <h1 class="list">アイコンからあの人を捜す</h1>
+		    <form method="get" action="view.php">
+		    <input type="text" name="twitterId" class="twitterId" value="<?php echo $twitterId; ?>">
+		    <input type="submit" value="一覧作成" class="submit_top">
+	    </p>
+	    </form>
+	    <hr />
+	</div>
+    <h2 class="print">
+    <img src="img/Cosmopolitan-cocktail-64.png" width="30px"><?php echo $twitterId; ?>さんのフォローしている方々のアイコン</h2>
+	<div class="listAll">
+	   <?php
+           for($n = 1;$n <= $pages; $n++){
+                if ($n == $page) {
+                    echo '<strong>' . $n . '</strong> | ';
+                }
+                else{            
+                   echo '<a href="view.php?twitterId=' . $twitterId . '&page=' .  $n . '">' . $n . '</a> | ';
+                }
+           }
+        ?>	
+	
+		<ul class="allIcon">
+		<?php
+	    	foreach($groupDetail as $eachUser) {
+				echo '<li id="' . $eachUser['id_str'] . '"><a href="http://twitter.com/' . $eachUser['screen_name'] . '"><img src="' . $eachUser['profile_image_url'] . '" class="profile_image_url"></a>';
+				$popUp = $eachUser['name'];
+			?>
+			<script type="text/javascript">
+			<!--
+				$(document).ready(function(){
+					$('#<?php echo $eachUser["id_str"]; ?>' ).CreateBubblePopup({
+							position : 'top',align	 : 'center',
+							innerHtmlStyle: {
+												color:'#FFFFFF', 
+												'text-align':'center'
+											},
+							themeName: 	'all-black',
+							themePath: 	'img/jquerybubblepopup-theme',
+							innerHtml: '<?php echo $popUp; ?>' 
+						});
+				});
+			//-->
+			</script>
+			<?php  		
+	    	}
+		?>
+		</ul>
+	</div>
+
+    </div>
+</div>
+</body>
+</html>
