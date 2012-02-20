@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html lang="ja"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen,tv" /> 
+<link rel="stylesheet" href="<?php echo $print; ?>.css" type="text/css" media="print" /> 
+<link rev="made" href="mailto:ayakomuro@gmail.com"> 
+<title>スタッフ名札作成表</title> 
+</head> 
+<body><br />
+<div class="main_content">
+	<div id="print_hide">
+		<div class="backtohome"><a href="/">Codeに戻る</a></div>
+
+	    <h1 class="list">スタッフ名札作成表</h1>
+	    <form method="get" action="view.php">
+	    <input type="text" name="users" class="url_list" value="<?php echo $users; ?>">
+	    <!--
+	    <select name="print">
+	    	<option value='print'<?php if($print == 'print') echo 'selected'; ?>>印刷時:短冊形式</option>
+	    	<option value='full'<?php if($print == 'full') echo 'selected'; ?>>印刷時:名札形式</option>
+	    </select>    
+        -->
+		<input type="submit" value="一覧作成" class="submit_list">    
+	    </p>
+	    </form>
+	    <hr />
+	</div>
+    <div class="eventInfo" id="print_hide">
+		<span class="printList"><a href="#" onclick="window.print();return false;">このページを印刷する</a></span>
+   	</div>
+    <div class="simple">
+    <?php
+        $n = 1;
+        foreach($usersInfo as $user) {
+                    echo '<dl><div class="twitterImg"><img src="' .  $user->profile_image_url . '" /></div>';
+                    echo '<span class="nickname">' .  $user->screen_name . '</span>';
+                    echo '<span class="attendnum">No.' . $n . '/スタッフ</span></dl>';
+             $n++;
+        }
+        ?>
+    </div>
+</div>
+</body>
+</html>

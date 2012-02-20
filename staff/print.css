@@ -1,0 +1,90 @@
+@charset "UTF-8";
+text: #26160D;
+background: #fff;
+blue: #365073;
+mblue: #51718C;
+lightblue: #8FA3A6;
+
+body {
+    font-family:Helvetica, 'ヒラギノ角ゴ Pro W3','HiraKakuProN-W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+.main_content {
+}
+a   {
+    color:#365073;
+    text-weight: bold;
+    text-decoration:none;
+}
+p {
+    padding: 10px;
+}
+a:link  {
+    border-bottom:1px dotted #51718C;
+}
+a:visited { border-bottom:1px dotted #aaa; }
+
+div.simple {
+	clear:both;
+}
+div.simple  dl{
+    float: left;
+    color: #51718C;
+    height: 100px;
+    border: 1px #365073 dotted;
+    width: 318px;
+    padding: 1px 2px;
+    margin: 0px;
+    text-align: left;
+    height: 100px;
+}
+
+.twitterImg {
+    display: block;
+    padding: 10px;
+    float: left;
+}
+.nickname {
+    display: block;
+    font-size: 20px;
+    color: #365073;
+    font-weight: bold;
+}
+div.eventImg {
+	float:left;
+	display: block;
+	padding: 3px;
+	width: 210px;
+}
+div.eventInfo {
+	float:left;
+	display: block;
+}
+.hashtag {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #365073;
+    float:left;
+}
+.url {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #365073;
+    float:left;
+    clear:both;
+}
+.printList {
+    clear:both;
+	float:left;
+    padding-left: 50px;
+    padding-top: 10px;
+    background-image: url('img/Print_48.png');
+    background-repeat: no-repeat;
+    height: 50px;
+    color: #365073;
+    text-align: left;
+}
+#print_hide {
+	display:none;
+}
