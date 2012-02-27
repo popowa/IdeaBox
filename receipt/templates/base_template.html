@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html lang="ja"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>領収書簡単印刷|{% block title %}{% endblock %}</title>
+<script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen,tv" /> 
+<link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" type="text/css" media="print" /> 
+</head>
+<body>
+<div class="content">
+<img src="{{ STATIC_URL }}images/receipt_print.jpg">
+    {% block content%}
+    
+    
+    {% endblock %}
+</div>
+</body>
+</html>
+
+
