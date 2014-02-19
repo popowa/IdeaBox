@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html lang="ja"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Content-Style-Type" content="text/css"> 
+<link rel="stylesheet" href="style.css" type="text/css" > 
+<link rev="made" href="mailto:ayakomuro@gmail.com"> 
+<title>練馬区報をテキスト</title> 
+</head> 
+<body><br />
+<div class="main_content">
+	<div class="backtohome"><a href="/">Codeに戻る</a></div>
+    <h1>練馬区報をテキスト化します。</h1>
+    <p><span class="caption">毎月発行される区報（1日、11日、21日）をテキスト化する事が出来ます。<br />見たい区報の日時を選択してください。<br />2011年4月1号からテキスト化しています。<br />一覧で確認したい場合は<a href="/9ho2txt/store/">テキスト化されている区報一覧</a>を見てください<br />
+    一度作成ボタンを押したら３分ほどかかります。作成ボタンを連打しないでください。</span></p>
+    
+    <form method="get" action="view.php">
+    <select name="month" class="month">
+    	<option value="01">01</option>
+    	<option value="02">02</option>
+    	<option value="03">03</option>
+    	<option value="04">04</option>
+    	<option value="05">05</option>
+    	<option value="06">06</option>
+    	<option value="07">07</option>
+    	<option value="08">08</option>
+    	<option value="09">09</option>
+    	<option value="10">10</option>
+    	<option value="11">11</option>
+    	<option value="12">12</option>
+    </select>月
+    <select name="day" class="day">
+    	<option value="01">01</option>
+    	<option value="11">11</option>
+    	<option value="21">21</option>
+    </select>号
+       	
+    <input type="submit" value="テキスト表示" class="submit_top">
+    </p>
+    </form>
+    <hr />
+    </div>
+</body>
+</html>
