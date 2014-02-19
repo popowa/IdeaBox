@@ -1,0 +1,227 @@
+@charset "UTF-8";
+text: #4A251F;
+background: #fff;
+blue: #54453D; 
+mblue: #787248; 
+lightblue: #B29447;
+
+body {
+    font-family:Helvetica, 'ヒラギノ角ゴ Pro W3','HiraKakuProN-W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+.main_content {
+    margin:0 auto 0 auto;
+    text-align: center;
+    width: 600px;
+}
+a   {
+    color:#54453D;
+    text-weight: bold;
+    text-decoration:none;
+}
+p {
+    padding: 10px;
+}
+a:link  {
+    border-bottom:1px dotted #787248;
+}
+a:visited { border-bottom:1px dotted #aaa; }
+
+h1 {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #54453D;
+    background-image: url('img/Cappuccino_64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h1.error {
+    background-image: url('img/Cappuccino_64.png');
+}
+h1.list {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #54453D;
+    background-image: url('img/Cappuccino_64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h2.print {
+	font-size: 14px;
+	font-weight: bold;
+    color: #54453D;
+    text-align: left;
+
+}
+
+.caption {
+    padding-left: 70px;
+    color: #54453D;
+    font-size: 14px;
+}
+
+.url_top {
+    width: 500px;
+    display: inline;
+    height: 20px;
+    color: #4A251F;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #B29447 solid; 
+}
+.url_list {
+    width: 500px;
+    display: inline;
+    height: 20px;
+    color: #4A251F;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #B29447 solid; 
+}
+.submit_top {
+    margin-top: 10px;
+    height: 50px;
+    width: 200px;
+    color: #F2D883;
+    font-size: 15px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #B29447 solid;
+    background: #B29447;
+}
+.submit_top:hover {
+    color: #54453D;
+    background: #F2D883;
+   border: 2px #F2D883 solid;
+}
+.submit_list {
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    color: #F2D883;
+    font-size: 12px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #B29447 solid;
+    background: #B29447;
+}
+.submit_list:hover {
+    color: #54453D;
+    background: #F2D883;
+   border: 2px #F2D883 solid;
+}
+
+div.simple {
+	clear:both;
+}
+div.simple  dl{
+
+}
+
+.twitterImg {
+    display: block;
+    padding: 10px;
+	float:left;
+}
+
+.nickname {
+	clear:both;
+    display: block;
+    font-size: 20px;
+    color: #54453D;
+    font-weight: bold;
+	padding-left: 10px;
+	float:left;
+}
+div.eventImg {
+	float:left;
+	display: block;
+	padding: 3px;
+	width: 210px;
+}
+div.eventInfo {
+	float:left;
+	display: block;
+}
+.hashtag {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #54453D;
+    float:left;
+}
+.url {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #54453D;
+    float:left;
+    clear:both;
+}
+.attendnum {
+	display: block;
+	font-size: 9px;
+	float:right;
+}
+.printList {
+    clear:both;
+	float:left;
+    padding-left: 50px;
+    padding-top: 10px;
+    background-image: url('../img/Print_48.png');
+    background-repeat: no-repeat;
+    height: 50px;
+    color: #54453D;
+    text-align: left;
+}
+#print_hide {
+		display:none;
+}
+
+.simple table{
+    width: 100%;
+    border: 1px #B29447 solid;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.simple th {
+    border: #4A251F solid;
+    border-width: 0 0 1px 1px;
+    background: #B29447;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+}
+.simple td {
+    border: 1px #B29447 solid;
+    border-width: 0 0 1px 1px;
+    text-align: center;
+    height: 43px;
+}
+.simple td img.twitter {
+	width: 48px;
+	height: 48px;	
+}
+.simple td.info {
+	width: 300px;	
+}
+.simple td.last {
+	width: 300px;
+	border-right: 0px;
+}
+.simple td.userName {
+	font-size: 20px;
+	font-weight: bold;	
+}

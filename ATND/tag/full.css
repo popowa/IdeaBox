@@ -1,0 +1,146 @@
+@charset "UTF-8";
+text: #26160D;
+background: #fff;
+blue: #365073;
+mblue: #51718C;
+lightblue: #8FA3A6;
+
+body {
+    font-family:Helvetica, 'ヒラギノ角ゴ Pro W3','HiraKakuProN-W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+.main_content {
+}
+a   {
+    color:#365073;
+    text-weight: bold;
+    text-decoration:none;
+}
+p {
+    padding: 10px;
+}
+a:link  {
+    border-bottom:1px dotted #51718C;
+}
+a:visited { border-bottom:1px dotted #aaa; }
+
+h1 {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #365073;
+    background-image: url('img/Gin-Fizz-cocktail-64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h1.error {
+    background-image: url('img/Negroni-cocktail-64.png');
+}
+h1.list {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #365073;
+    background-image: url('img/Pina-Colada-cocktail-64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h2.print {
+	font-size: 14px;
+	font-weight: bold;
+    color: #365073;
+    text-align: left;
+
+}
+
+.caption {
+    padding-left: 70px;
+    color: #365073;
+    font-size: 14px;
+}
+.url_list {
+    width: 500px;
+    display: inline;
+    height: 20px;
+    color: #26160D;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #8FA3A6 solid; 
+}
+div.simple {
+	clear:both;
+}
+div.simple  dl{
+    float: left;
+    display: block;
+    color: #51718C;
+    height: 240px;
+    border: 1px #365073 dotted;
+    width: 318px;
+    padding: 1px 2px;
+    margin: 0px;
+    text-align: left;
+	background-image: url('img/jawsazure.jpg');
+    background-repeat: no-repeat;
+}
+
+
+.twitterImg {
+    display: block;
+    padding: 10px;
+    float: left;
+}
+.nickname {
+	padding-top: 100px;
+	padding-left: 15px;
+    display: block;
+    font-size: 30px;
+    color: #365073;
+    font-weight: bold;
+}
+.attendnum {
+	padding-left: 15px;		
+}
+div.eventImg {
+	float:left;
+	display: block;
+	padding: 3px;
+	width: 210px;
+}
+div.eventInfo {
+	float:left;
+	display: block;
+}
+.hashtag {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #365073;
+    float:left;
+}
+.url {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #365073;
+    float:left;
+    clear:both;
+}
+.printList {
+    clear:both;
+	float:left;
+    padding-left: 50px;
+    padding-top: 10px;
+    background-image: url('img/Print_48.png');
+    background-repeat: no-repeat;
+    height: 50px;
+    color: #365073;
+    text-align: left;
+}
+
+#print_hide {
+	display:none;
+}
