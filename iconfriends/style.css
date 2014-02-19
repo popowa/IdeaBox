@@ -1,0 +1,109 @@
+@charset "UTF-8";
+text: #26160D;
+background: #fff;
+blue: #365073;
+mblue: #51718C;
+lightblue: #8FA3A6;
+
+body {
+    font-family:Helvetica, 'ヒラギノ角ゴ Pro W3','HiraKakuProN-W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+.main_content {
+    margin:0 auto 0 auto;
+    text-align: center;
+    width: 600px;
+}
+a   {
+    color:#365073;
+    text-weight: bold;
+    text-decoration:none;
+}
+p {
+    padding: 10px;
+}
+h1 {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #365073;
+    background-image: url('img/Gin-Fizz-cocktail-64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h1.error {
+    background-image: url('img/Negroni-cocktail-64.png');
+}
+h1.list {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #365073;
+    background-image: url('img/Cosmopolitan-cocktail-64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h2.print {
+	font-size: 14px;
+	font-weight: bold;
+    color: #365073;
+    text-align: left;
+
+}
+.twitterId {
+    width: 500px;
+    display: inline;
+    height: 20px;
+    color: #26160D;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #8FA3A6 solid; 
+}
+.submit_top {
+    margin-top: 10px;
+    height: 50px;
+    width: 200px;
+    color: #F2D883;
+    font-size: 15px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #8FA3A6 solid;
+    background: #8FA3A6;
+}
+.submit_top:hover {
+    color: #365073;
+    background: #F2D883;
+   border: 2px #F2D883 solid;
+}
+.submit_list {
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    color: #F2D883;
+    font-size: 12px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #8FA3A6 solid;
+    background: #8FA3A6;
+}
+.submit_list:hover {
+    color: #365073;
+    background: #F2D883;
+   border: 2px #F2D883 solid;
+}
+ul {
+	list-style: none;
+}
+li {
+	float: left;
+	padding: 2px;
+}
+.profile_image_url {
+	width: 48px;
+	height: 48px;	
+}
