@@ -1,0 +1,45 @@
+{% extends "base_template.html" %}
+{% block title %}一覧{% endblock %}
+{% block content %}
+    <div class='receiptbox'>
+        {%for user in user_info %}
+            {% for n in receipts %}
+                {% if n %}
+                    <div class='receiptme'>
+                {% else %}
+                    <div class='receiptyou'>
+                 {% endif %}
+                        <span class='title'>領収書</span>
+            			<span class='number'>No. {{ invoice.number }}_{{ user.number }}</span>
+            			<span class='username'>{{  user.company }}<span class="namepre">様</span></span>
+            			<span class='price'>￥{{ invoice.pay }} (円)</span>
+            			<span class='receiptfor'>但:{{  invoice.for }}</span>
+            			<span class='datetime'>{{ invoice.date }}</span>
+            			<span class='comment'>上記正に領収いたしました</span>
+            			<div class='priceinfo'>
+                			<span class='pricelist'>内訳 
+                			    <span class='detail'></span>
+                			</span>
+                			<span class='pricelist'>税抜き金額 
+                			    <span class='detail'>{{ invoice.price_original }}円</span>
+                			</span>
+                			<span class='pricelist'>消費税額(5%) 
+                			    <span class='detail'>{{  invoice.price_tax }}円</span>
+                			</span>
+                    		<div class='compayinfo'>
+                    		    {% if company.image %}
+                    		      <img src="company.image" class="companylogo">
+                    		    {% endif %}
+                    		    <span class='postal'>〒{{ company.postal }} {{ company.address }}</span>
+                    		    <span class='address'></span>
+                    		    <span class='companyname'>{{ company.name }}</span>
+                    		    <span class='tel'>TEL: {{ company.tel }}</span>
+                    		    <span class='url'>URL: {{ company.url }}</span>
+                    		</div>
+                		</div>
+        		</div>
+        	{% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

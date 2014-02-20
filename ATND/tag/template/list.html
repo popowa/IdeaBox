@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html lang="ja"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen,tv" /> 
+<link rel="stylesheet" href="<?php echo $print; ?>.css" type="text/css" media="print" /> 
+<link rev="made" href="mailto:ayakomuro@gmail.com"> 
+<title>ATND参加者一覧作成表</title> 
+</head> 
+<body><br />
+<div class="main_content">
+	<div id="print_hide">
+		<div class="backtohome"><a href="/">Codeに戻る</a></div>
+
+	    <h1 class="list">ATND参加者一覧作成表</h1>
+	    <form method="get" action="view.php">
+	    <input type="text" name="url" class="url_list" value="<?php echo $url; ?>">
+	    <select name="attend">
+	    	<option value=''<?php if(empty($attend)) echo 'selected'; ?>>参加者/補欠者</option>
+	    	<option value='1'<?php if($attend == 1) echo 'selected'; ?>>参加者のみ</option>
+	    	<option value='0'<?php if($attend == '0') echo 'selected'; ?>>補欠者のみ</option>
+	    </select>
+	    <select name="print">
+	    	<option value='print'<?php if($print == 'print') echo 'selected'; ?>>印刷時:短冊形式</option>
+	    	<option value='full'<?php if($print == 'full') echo 'selected'; ?>>印刷時:名札形式</option>
+	    </select>    
+		<input type="submit" value="一覧作成" class="submit_list">    
+	    </p>
+	    </form>
+	    <hr />
+	</div>
+    <h2 class="print" id="print_hide"><img src="img/Gin-Fizz-cocktail-64.png" width="30px"><?php echo $title; ?></h2>
+    <?php if($eventImg) {
+        echo '<div class="eventImg"><img src="'. $eventImg . '" width="200px"></div>';
+    }
+    ?>
+    <div class="eventInfo" id="print_hide">
+	    <?php if($hash_tag){ ?><span class="hashtag">ハッシュタグ: <a href="http://twitter.com/#!/search/%23<?php echo $hash_tag; ?>" target="_blank"><?php echo $hash_tag; ?></a></span><?php } ?>
+    	<span class="url">URL: <a href="<?php echo $url; ?>" target="_blank"><?php echo $url; ?></a></span>
+		<span class="printList"><a href="#" onclick="window.print();return false;">このページを印刷する</a></span>
+   	</div>
+    <div class="<?php echo $class; ?>">
+    <?php
+        $n = 1;
+        foreach($users as $user) {
+        	if(is_numeric($attend) && $user->status == $attend) {
+                    echo '<dl><div class="twitterImg"><img src="' .  ((!empty($user->twitter_img)) ? $user->twitter_img : $missingImg) . '" /></div>';
+                    echo '<span class="nickname">' .  $user->nickname .'</span>';
+                    echo '<span class="attendnum">No.' . $n . '/' . (($user->status == 1)? '参加者': '補欠者') . '</span><span class="extraimg"></span></dl>';
+        	}
+        	elseif($attend == '') {
+                    echo '<dl><div class="twitterImg"><img src="' .  ((!empty($user->twitter_img)) ? $user->twitter_img : $missingImg) . '" /></div>';
+                    echo '<span class="nickname">' .  $user->nickname .'</span>';
+                    echo '<span class="attendnum">No.' . $n . '/' . (($user->status == 1)? '参加者': '補欠者') . '</span><span class="extraimg"></span></dl>';
+        		
+        	}
+             if($print == 'print' && $n%18 == 0 ) echo '<img src="/img/space.gif" width="100%" height="25px" id="screen_hide">';
+             $n++;
+
+        }
+
+        ?>
+    </div>
+</div>
+</body>
+</html>

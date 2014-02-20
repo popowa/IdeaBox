@@ -1,0 +1,182 @@
+@charset "UTF-8";
+text: #26160D;
+background: #fff;
+blue: #365073;
+mblue: #51718C;
+lightblue: #8FA3A6;
+
+body {
+    font-family:Helvetica, 'ヒラギノ角ゴ Pro W3','HiraKakuProN-W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+.main_content {
+    margin:0 auto 0 auto;
+    text-align: center;
+    width: 600px;
+}
+a   {
+    color:#365073;
+    text-weight: bold;
+    text-decoration:none;
+}
+p {
+    padding: 10px;
+}
+a:link  {
+    border-bottom:1px dotted #51718C;
+}
+a:visited { border-bottom:1px dotted #aaa; }
+
+h1 {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #365073;
+    background-image: url('img/Tequila-Sunrise-cocktail-64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h1.error {
+    background-image: url('img/Negroni-cocktail-64.png');
+}
+h1.list {
+    padding-left: 70px;
+    padding-top: 10px;
+    color: #365073;
+    background-image: url('img/Pina-Colada-cocktail-64.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    text-align: left;
+}
+h2.print {
+	font-size: 14px;
+	font-weight: bold;
+    color: #365073;
+    text-align: left;
+
+}
+
+.caption {
+    padding-left: 70px;
+    color: #365073;
+    font-size: 14px;
+    display: block;
+}
+
+.month, .day {
+	padding: 10px;
+	border: 1px solid #365073;
+	background-color: #26160D;
+	font-size: 25px;
+	font-weight: bold;
+	color: #8FA3A6;
+}
+.submit_top {
+    margin-top: 10px;
+    height: 50px;
+    width: 200px;
+    color: #8FA3A6;
+    font-size: 15px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #8FA3A6 solid;
+    background: #26160D;
+}
+.submit_top:hover {
+    color: #26160D;
+    background: #8FA3A6;
+   border: 2px #26160D solid;
+}
+.submit_list {
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    color: #F2D883;
+    font-size: 12px;
+   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+   border: 2px #8FA3A6 solid;
+    background: #8FA3A6;
+}
+.submit_list:hover {
+    color: #365073;
+    background: #F2D883;
+   border: 2px #F2D883 solid;
+}
+
+div.simple {
+	clear:both;
+}
+div.simple  dl{
+    float: left;
+    color: #51718C
+    height: 100px;
+    border: 1px #365073 dotted;
+    width: 250px;
+    padding: 5px;
+    margin: 3px 3px;
+    text-align: left;
+    height: 100px;
+    display: block;
+}
+
+.twitterImg {
+    display: block;
+    padding: 10px;
+	float:left;
+}
+
+.nickname {
+	clear:both;
+    display: block;
+    font-size: 20px;
+    color: #365073;
+    font-weight: bold;
+	padding-left: 10px;
+	float:left;
+}
+div.eventImg {
+	float:left;
+	display: block;
+	padding: 3px;
+	width: 210px;
+}
+div.eventInfo {
+	float:left;
+	display: block;
+}
+.hashtag {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #365073;
+    float:left;
+}
+.url {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+    color: #365073;
+    float:left;
+    clear:both;
+}
+.attendnum {
+	display: block;
+	font-size: 9px;
+	float:right;
+}
+.printList {
+    clear:both;
+	float:left;
+    padding-left: 50px;
+    padding-top: 10px;
+    background-image: url('img/Print_48.png');
+    background-repeat: no-repeat;
+    height: 50px;
+    color: #365073;
+    text-align: left;
+}
+#screen_hide {
+		display:none;
+}

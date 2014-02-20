@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>区報変換</title>
+<meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+<link rel=stylesheet type="text/css" href="./style.css">
+<SCRIPT language="JavaScript">
+<!-- 
+function removeKuma(){
+document.getElementById("hoge").value ='';
+}
+// -->
+</SCRIPT>
+</head>
+<body>
+<div id="main">
+	<div id="header">
+	<div class="backtohome"><a href="/">Codeに戻る</a></div>
+		文字変換ツール
+	</div>
+		変換したい文字については変換表の作成リンクをたどって、変換表を作成してください。
+	<form method="post" action="./index.php">
+		<textarea name="data" rows="15" cols="40" id="hoge">
+　　 ∩＿＿＿∩
+　　 | ノ　　　　　 ヽ
+　　/　　●　　　● |　クマ──！！
+　 |　　　　( _●_)　 ミ
+　彡､　　　|∪|　　､｀＼
+/　＿＿　 ヽノ　/´>　 )
+(＿＿＿）　　　/　(_／
+　|　　　　　　 /
+　|　　／＼　＼
+　|　/　　　 )　 )
+　∪　　　 （　 ＼
+　　　　　　 ＼＿)
+
+		</textarea><br />
+    	<INPUT type="button" value="テキストエリナ内を削除する" onClick="removeKuma()">
+		<br />
+		<input type="hidden" name="sc" value="testtesttest">
+		英字: <input type="radio" name="eiji" value='r' checked>全角 => 半角(デフォルト)<input type="radio" name="eiji" value='R'>半角 => 全角<br />
+		カタカナ: <input type="radio" name="kana" value='k'>全角 => 半角<input type="radio" name="kana" value='K' checked>半角 => 全角(デフォルト)<br />
+		改行：<input type="checkbox" name="removebr" value="removebr">改行を削除する<br />
+		<input type="submit" value="変換！">
+	</form>
+	
+	<div id="footer">
+
+	<a href="./config.php">変換表の作成</a> | <a href="./index.html">トップページ</a>
+	ご利用はみなさんの責任でお願いします。
+	</div>
+    <hr /></div>
+</body>
+</html>

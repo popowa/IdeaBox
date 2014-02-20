@@ -1,0 +1,94 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html lang="ja"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen,tv" /> 
+<link rel="stylesheet" href="print.css" type="text/css" media="print" /> 
+<link rev="made" href="mailto:ayakomuro@gmail.com"> 
+<title>ATND参加者一覧作成表</title> 
+</head> 
+<body><br />
+<div class="main_content">
+	<div id="print_hide">
+		<div class="backtohome"><a href="/">Codeに戻る</a></div>
+	    <h1 class="list">ATND参加者一覧作成表</h1>
+	    <form method="get" action="view.php">
+	    <input type="text" name="url" class="url_list" value="<?php echo $url; ?>">
+	    <select name="attend">
+	    	<option value=''<?php if(empty($attend)) echo 'selected'; ?>>参加者/補欠者</option>
+	    	<option value='1'<?php if($attend == 1) echo 'selected'; ?>>参加者のみ</option>
+	    	<option value='0'<?php if($attend == '0') echo 'selected'; ?>>補欠者のみ</option>
+	    </select>
+    <p><input type="checkbox" name="afterparty"<?php echo ($afterparty)? ' checked' : ''; ?>>懇親会あり
+    <input type="checkbox" name="payment"<?php echo ($payment)? ' checked' : ''; ?>>領収書発行あり</p>
+		<input type="submit" value="一覧作成" class="submit_list">    
+	    </p>
+	    </form>
+	    <hr />
+	</div>
+	
+    <h2 class="print" id="print_hide"><img src="img/Cappuccino_64.png" width="30px"><?php echo $title; ?></h2>
+    <?php if($eventImg == true) {
+        echo '<div class="eventImg"><img src="'. $eventImg . '" width="200px"></div>';
+    }
+    ?>
+    <div class="eventInfo" id="print_hide">
+	    <?php if($hash_tag){ ?><span class="hashtag">ハッシュタグ: <a href="http://twitter.com/#!/search/%23<?php echo $hash_tag; ?>" target="_blank"><?php echo $hash_tag; ?></a></span><?php } ?>
+    	<span class="url">URL: <a href="<?php echo $url; ?>" target="_blank"><?php echo $url; ?></a></span>
+		<span class="printList" id="print_hide"><a href="#" onclick="window.print();return false;">このページを印刷する</a></span>
+   	</div>
+    <div class="<?php echo $class; ?>">
+   <table>
+   <tr>
+	   <td>番号</td>
+	   <td>Twitter画像</td>
+	   <td class="info">名前(HN)</td>
+	   <td>参/補</td>
+	   <td class="info">出席</td>
+	   <?php echo ($afterparty)? '<td class="info">懇親会参加</td>' : ''; ?>
+	   <?php echo ($payment) ? '<td class="last">領収証</td>' : ''; ?>
+   </tr>
+    <?php
+        $n = 1;
+        foreach($users as $user) {
+	    	if(is_numeric($attend) && $user->status == $attend) {
+	    			echo '<tr>';
+        			echo '<td>' . $n . '</td>';
+                    echo '<td><img src="' .  ((!empty($user->twitter_img)) ? $user->twitter_img : $missingImg) . '" class="twitter" /></td>';
+                    echo '<td class="userName">' .  $user->nickname .'</td>';
+                    echo '<td><img src="img/' . (($user->status == 1)? 'big_smile-32.png': 'unhappy-32.png') . '"></td><td></td>';
+                    if($afterparty) {
+                    	echo '<td' . ((!$payment) ? ' class="last"' : '' ) . '></td>';
+                    }
+                    if($payment) {
+	                    echo '<td class="last"></td>';
+                    }
+                    echo '</tr>';
+        	}
+        	elseif($attend == '') {
+	    			echo '<tr>';
+        			echo '<td>' . $n . '</td>';
+                    echo '<td><img src="' .  ((!empty($user->twitter_img)) ? $user->twitter_img : $missingImg) . '" class="twitter" /></td>';
+                    echo '<td class="userName">' .  $user->nickname .'</td>';
+                    echo '<td><img src="img/' . (($user->status == 1)? 'big_smile-32.png': 'unhappy-32.png') . '"></td><td></td>';
+                    if($afterparty) {
+                    	echo '<td' . ((!$payment) ? ' class="last"' : '' ) . '></td>';
+                    }
+                    if($payment) {
+	                    echo '<td class="last"></td>';
+                    }
+                    echo '</tr>';
+        		
+        	}
+             $n++;
+
+        }
+
+        ?>
+    </div>
+</div>
+</body>
+</html>

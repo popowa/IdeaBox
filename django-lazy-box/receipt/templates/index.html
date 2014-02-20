@@ -1,0 +1,71 @@
+{% extends "base_template.html" %}
+{% block title %}トップ{% endblock %}
+{% block content %}
+
+<script type="text/javascript">
+var $ = jQuery.noConflict();
+$(function (){
+    $('.get_facebook_page').click(function (){
+        var page_name = $('input:text[name=facebook_page_name]').val()
+        if ( page_name == null || page_name == false) {
+            $('.facebook_error').text('Please type your facebook page name!')
+        }
+        else{
+            $('.facebook_error').remove()
+            $.ajax({
+              url: "/receipt/facebook/"+page_name,
+              success: function(data){
+                alert(data.location)
+                $(".company_logo").attr("src",data.picture);
+                $('.company_logo').css('visibility:visible;');
+                $('input:text[name=company_postal]').val(data.location.zip);
+                $('input:text[name=company_name]').val(data.name);
+                $('input:text[name=company_address]').val(data.location.street);
+                $('input:text[name=company_tel]').val(data.phone);
+                $('input:text[name=company_url]').val(data.link);
+                $('input:text[name=company_logo]').val(data.picture);
+                $('.company_description').append(data.description);
+              }
+            });
+
+        }     
+    });
+
+});
+</script>
+
+
+<form method="post" action="{% url receipt_list %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="facebook">
+        <span class="facebook_error"></span>
+        <span class="facebook_link">http://www.facebook.com/<input type="text" name="facebook_page_name" value="" size="10" class="facebook_page_name">/</span>
+        <span class="link get_facebook_page"><img src="{{ STATIC_URL }}images/get_data_from_fb.jpg"></span>
+        <br />    Do you have a FB Page? You can grab your company information from FB.(ex: popowa)
+    </div>
+    <div class="facebook company">
+        <img src="{{ STATIC_URL}}images/company_info.jpg">
+
+        <ul class="input_list">
+        <li>{{ generate_form.company_postal.label }}{{ generate_form.company_postal }}</li>
+        <li>{{ generate_form.company_name.label }}{{ generate_form.company_name }}</li>
+        <li>{{ generate_form.company_address.label }}{{ generate_form.company_address }}</li>
+        <li>{{ generate_form.company_tel.label }}{{ generate_form.company_tel }}</li>
+        <li>{{ generate_form.company_url.label }}{{ generate_form.company_url }}</li>
+        <li>{{ generate_form.company_logo.label }}{{ generate_form.company_logo }}</li>
+        </ul>
+        <img src="" class="company_logo">
+    </div>
+    
+    <div class="facebook customers">
+        <img src="{{ STATIC_URL}}images/customers_info.jpg">
+        <ul class="input_list">
+        <li>{{ generate_form.receipt_for.label }}{{ generate_form.receipt_for }}</li>
+        <li>{{ generate_form.receipt_number.label }}{{ generate_form.receipt_number }}</li>
+        <li>{{ generate_form.receipt_customers.label }}{{ generate_form.receipt_customers }}</li>
+        <li>{{ generate_form.receipt_pay.label }}{{ generate_form.receipt_pay }}</li>
+        </ul>    
+    </div>
+    <input type="submit" name="send" value="Create Receipt / 領収書作成" class="create_receipt_bottom link">
+</form>
+{% endblock %}
