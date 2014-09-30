@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "View Bodyline website",
+  "version": "1.0.0",
+  "description": "Remove shackwave that makes chrome crash",
+  "author": "@ayakomuro",
+  "content_scripts": [{
+    "matches": ["http://*.rakuten.co.jp/bodyline/*"],
+    "js": ["jquery-2.1.1.min.js", "shockwave.js"]
+  }]
+}
