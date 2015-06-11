@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+    <title>Google Spreadsheet Javascript</title> 
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="google-spreadsheet.js"></script>
+</script>
+  </head> 
+  <body> 
+    <h2>rowdata > data > embed html only/ HTMLとして表示</h2>
+    <div id="rowdata"></div>
+    <h2>rowdata Textとして表示</h2>
+    <div id="rowdata2"></div>
+    <h2>all results from spreadsheet</h2>
+    <div id='results'></div>
+    <h2>分かった事(´；ω；｀)ｳｯ…</h2>
+    <ul>
+      <li>CORS対応してない。proxy立てる必要がある
+      <li>それかこのページ自体を動的に生成させる
+    </ul>
+    <h2>やりたかった事</h2>
+    <ul>
+      <li>IFTTT経由でtwitter hashtag searchで入ったgoogle spreadsheetのembed html codeもしくはTwitter url(ajaxでapi call->jsonp)を通してembedのDOMを静的HTMLにappendして表示させたかった
+    </ul>
+    <h2>参考URL</h2>
+    <ul>
+      <li><a href="https://dev.twitter.com/web/embedded-tweets">https://dev.twitter.com/web/embedded-tweets</a>
+      <li><a href="https://github.com/mikeymckay/google-spreadsheet-javascript">https://github.com/mikeymckay/google-spreadsheet-javascript</a>
+      <li><a href="http://d.hatena.ne.jp/slaypni/20130808/1375948292">http://d.hatena.ne.jp/slaypni/20130808/1375948292</a>
+      <li><a href="https://twittercommunity.com/t/access-control-allow-origin/7253">https://twittercommunity.com/t/access-control-allow-origin/7253</a>
+      </ul>
+
+    <script id='script'>
+      localStorage.clear();
+      var sample_url = "https://spreadsheets.google.com/pub?key=13OXv6e3NwBMqvKCNJvxTPF_Hy6XvS5jsdmtn4UugG_g&hl=en&output=json";
+      var url_parameter = document.location.search.split(/\?url=/)[1]
+      var url = url_parameter || sample_url;
+      var googleSpreadsheet = new GoogleSpreadsheet();
+      googleSpreadsheet.url(url);
+      googleSpreadsheet.load(function(result) {
+        var datajson = JSON.stringify(result.data).replace(/,/g,",\n");
+        splitdata = datajson.split(",");
+        $("#rowdata").html(splitdata[5].replace(/\\\"/g, ""));
+        $("#rowdata2").text(splitdata[5]).html();
+
+        $('#results').html(JSON.stringify(result).replace(/,/g,",\n"));
+      });
+    </script>
+  </body>
+</html>
+
